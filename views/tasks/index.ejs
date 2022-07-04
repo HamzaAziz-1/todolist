@@ -1,0 +1,15 @@
+<html>
+    <head></head>
+    <body>
+        <a href="/tasks/create">Create New Task</a>
+        <ul>
+        <%for(let i=0;i<tasks.length;i++){%>
+            <li>
+                <%-tasks[i].name%> 
+                <a href="/tasks/edit/<%-tasks[i]._id%>">Edit</a> 
+                <a href="/tasks/delete/<%-tasks[i]._id%>">Delete</a>
+            </li>
+        <%}%>
+    </ul>
+    </body>
+</html>

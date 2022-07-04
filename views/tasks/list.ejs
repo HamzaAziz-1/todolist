@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-primary">
+  <div class="container">
+    <a class="navbar-brand ml-5" href="#">Task Manager App</a>
+    
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+     
+    </div>
+  </div>
+</nav>
+<div class="heading text-center">
+    <h2 class="h2 my-5">
+        Task Manager App
+    </h2>
+</div>
+ <nav class="navbar bg-light mb-5">
+  <div class="container ">
+    <a class="navbar-brand">My Tasks</a>
+    <form class="d-flex" role="search">
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+<div class="container ml-5">
+    <%for(let i=0;i<tasks.length;i++){%>
+        <ul class="list-group list-group-horizontal mx-2 my-2">
+  <li class="list-group-item"><a href="/tasks/edit/<%-tasks[i]._id%>">  <button type="button" class="btn btn-outline-warning">Edit </button></a>
+  
+</li>
+  <li class="list-group-item"> <a href="/tasks/delete/<%-tasks[i]._id%>"><button type="button" class="btn btn-outline-danger"> Delete </button></a>
+</li>
+    <li class="list-group-item"><%-tasks[i].name%> </li>
+    <li class="list-group-item"> <%-tasks[i].time%> </li>
+    <li class="list-group-item">  <%-tasks[i].status%></li>
+</ul>
+
+<%}%>
+
+</div>
+<div class="text-center mt-5 ">
+
+   <a href="tasks/create"> <button type="button" class="btn btn-outline-danger " >Create New Task </button></a>  
+</div>
+
+</body>
+</html>
